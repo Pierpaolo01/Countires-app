@@ -58,3 +58,37 @@ header img {
 .dropdown-field{
     margin-top: 20px;
 }
+
+.country-container {
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(209, 23%, 22%);
+    margin: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 2px rgb(36 36 36);
+}
+
+.country-container img {
+    max-width: 100%;
+    height: 150px;
+    size: fit;
+}
+
+.country-small-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px auto;
+
+}
+
+.country-small-info h2{
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+}
+
+.country-small-info p{
+    text-align: center;
+}
