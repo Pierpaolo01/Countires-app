@@ -1,0 +1,60 @@
+body {
+    background-color:  hsl(207, 26%, 17%);
+    color: white;
+}
+
+header {
+    
+    height: 80px;
+    width: 100%;
+    margin: 0;
+    background-color: hsl(209, 23%, 22%);
+    display: flex;
+    justify-content: space-between;
+
+    box-shadow: 0px 2px 20px 5px rgb(36 36 36);
+}
+header h5 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+header div{
+    display: flex;
+}
+header div p{
+    text-align: center;
+    padding-top: 15px;
+}
+
+header img {
+    height: 26px;
+    width: 26px;
+    margin: 15px;
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+}
+
+.container main{
+    width: 85%;
+    margin: 30px auto;
+
+
+}
+
+.input-group{
+    box-shadow: 0px 0px 20px 5px rgb(36 36 36);
+}
+
+.input-group * {
+    
+    background-color: hsl(209, 23%, 22%);
+    color: white;
+}
+
+.dropdown-field{
+    margin-top: 20px;
+}

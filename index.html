@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+  />
+
+
+    <link rel="stylesheet" href="stytles.css">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <h5>Where in the world</h5>
+            
+            <div id="colorTheme">
+                <img src="resources/icon-moon.svg" alt="dark-mode">
+                <p>Dark-Mode</p>
+            </div>
+        </header>
+
+    
+
+        <main>
+
+            <!-- Search bar -->
+            <section class="search-field">
+                <div class="input-group">
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+                    </span>
+                    <input class="form-control py-2 border-left-0 border" type="search" placeholder="search for a countery..." id="example-search-input">
+                </div>
+            </section>
+
+            <!-- Filter Options dropdown-->
+            <section class="dropdown-field">
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filter by region
+                    </a>
+                
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">All</a>
+                        <a class="dropdown-item" href="#">Africa</a>
+                        <a class="dropdown-item" href="#">America action</a>
+                        <a class="dropdown-item" href="#">Asia</a>
+                        <a class="dropdown-item" href="#">Europe</a>
+                        <a class="dropdown-item" href="#">Oceania</a>
+                    </div>
+            
+                </div>
+            </section>
+
+            <!-- Fetched results -->
+            <section class="results"> 
+
+            </section>
+
+
+            <!-- Detailed Country  Information-->
+            <!-- TODO -->
+            <section class="detailed-info">
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+    
+
+       
+    
+
+    
+</body>
+
+<script href="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
