@@ -36,44 +36,80 @@
 
         <main>
 
-            <!-- Search bar -->
-            <section class="search-field">
-                <div class="input-group">
-                    <span class="input-group-append">
-                        <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
-                    </span>
-                    <input class="form-control py-2 border-left-0 border" type="search" placeholder="search for a countery..." id="example-search-input">
-                </div>
-            </section>
-
-            <!-- Filter Options dropdown-->
-            <section class="dropdown-field">
-                <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Filter by region
-                    </a>
-                
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">All</a>
-                        <a class="dropdown-item" href="#">Africa</a>
-                        <a class="dropdown-item" href="#">America action</a>
-                        <a class="dropdown-item" href="#">Asia</a>
-                        <a class="dropdown-item" href="#">Europe</a>
-                        <a class="dropdown-item" href="#">Oceania</a>
+            <!--Main section, gets hidden to show the 'More details of country'-->
+            <section class="main-section">
+                <!-- Search bar -->
+                <section class="search-field">
+                    <div class="input-group">
+                        <span class="input-group-append">
+                            <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+                        </span>
+                        <input class="form-control py-2 border-left-0 border" type="search" placeholder="search for a countery..." id="example-search-input">
                     </div>
+                </section>
+
+                <!-- Filter Options dropdown-->
+                <section class="dropdown-field" >
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Filter by region
+                        </a>
+                    
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">All</a>
+                            <a class="dropdown-item" href="#">Africa</a>
+                            <a class="dropdown-item" href="#">America action</a>
+                            <a class="dropdown-item" href="#">Asia</a>
+                            <a class="dropdown-item" href="#">Europe</a>
+                            <a class="dropdown-item" href="#">Oceania</a>
+                        </div>
+                
+                    </div>
+                </section>
             
-                </div>
-            </section>
 
-            <!-- Fetched results -->
-            <section class="results"> 
+                <!-- Fetched results -->
+                <section class="results"> 
 
+                </section>
             </section>
 
 
             <!-- Detailed Country  Information-->
             <!-- TODO -->
-            <section class="detailed-info">
+            <section class="detailed-info" >
+
+                <button class="btn-lg btn-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                    Back
+                </button>
+
+                <div class="detailed-container">
+                    <img src="" alt="" id="countryFlag">
+
+                    <h2 id="country-name"></h2>
+                    <p id="native-name"></p>
+                    <p id="population"></p>
+                    <p id="region"></p>
+                    <p id="sub-region"></p>
+                    <p id="capital"></p>
+
+                    <br>
+
+                    <p id="top-level-domain"></p>
+                    <p id="currency"></p>
+                    <p id="language"></p>
+                    
+                </div>
+
+                <div class="border-countries">
+                    <h5>bordered countries: </h5> 
+                    <div class="border-country-parent">
+                        
+                    </div>
+                </div>
 
 
             </section>

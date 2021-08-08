@@ -92,3 +92,32 @@ header img {
 .country-small-info p{
     text-align: center;
 }
+
+
+.detailed-info img{
+    max-width: 100%;
+    margin: 15px auto;
+}
+
+.detailed-info h2{
+    margin-top: 15px;
+}
+
+
+.border-country-parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.border-country-parent div{
+    border-radius: 5px;
+    margin: 15px;
+    padding: 10px 20px;
+    background-color: #2B3945;
+}
+
+.border-country-parent p{
+    margin: 0;
+    text-align: center;
+}
