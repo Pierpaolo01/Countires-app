@@ -40,6 +40,46 @@ dropdownMenuItem.forEach(el => {
     });
 });
 
+const changeTheme = document.querySelector('#colorTheme');
+changeTheme.addEventListener('click', func =>{
+    const currentMode = changeTheme.children[1];
+    const modeImg = changeTheme.children[0];
+    const lightTone = document.querySelectorAll('.theme-tone-light');
+    const pageText = document.querySelectorAll('p, h5, h2');
+    const body = document.querySelector('body');
+
+    if(currentMode.innerHTML === "Dark-Mode"){
+
+        
+        lightTone.forEach(el =>{
+            el.style.backgroundColor = 'hsl(0, 0%, 100%)';
+        });
+        pageText.forEach(el =>{
+            el.style.color = 'hsl(200, 15%, 8%)';
+        });
+
+        body.style.backgroundColor = 'hsl(0, 0%, 98%)';
+        
+        modeImg.src = 'resources/icon-sun.svg';
+        currentMode.innerHTML = "Light-Mode";
+
+    }else if(currentMode.innerHTML === "Light-Mode"){
+
+        lightTone.forEach(el =>{
+            el.style.backgroundColor = 'hsl(209, 23%, 22%)';
+        });
+
+        pageText.forEach(el =>{
+            el.style.color = 'hsl(0, 0%, 100%)';
+        });
+
+        body.style.backgroundColor = 'hsl(207, 26%, 17%)';
+
+        modeImg.src = 'resources/icon-moon.svg';
+        currentMode.innerHTML = "Dark-Mode";
+    }
+});
+
 
 
 //This function loops through the JSON data & sends it off
@@ -55,7 +95,7 @@ function showCountries(data){
 function displayCountries(country){
     //Main container for the country & info regarding it
     const countryContainer = document.createElement('div');
-    countryContainer.classList = 'country-container';
+    countryContainer.classList = 'country-container theme-tone-light';
 
     countryContainer.addEventListener("click", function(){
         //This onClick refers you to more info about chosen country
@@ -75,7 +115,7 @@ function displayCountries(country){
     countryTitle.textContent = country.name;
 
     const countryPopulation = document.createElement('p');
-    countryPopulation.textContent = "Population: " + numberWithCommas(country.population); //This line causing fatal issue, I believe it has to do with await process
+    countryPopulation.textContent = "Population: " + numberWithCommas(country.population); 
 
     const region = document.createElement('p');
     region.textContent = "Region: " + country.region;
@@ -84,6 +124,14 @@ function displayCountries(country){
     capital.textContent = "Capital: " + country.capital;
 
     //end of quick facts
+
+    if(changeTheme.children[1].innerHTML === "Light-Mode"){
+        countryContainer.style.backgroundColor = 'hsl(0, 0%, 100%)';
+        textElems = [capital, region, countryPopulation, countryTitle];
+        textElems.forEach(el =>{
+            el.style.color = 'hsl(200, 15%, 8%)';
+        });
+    }
 
     //appending all the items to DOM in correct sequence
     countryInfoDiv.appendChild(countryTitle);
@@ -169,7 +217,7 @@ function backToMain(){
 
 
 const getCountriesBySearch = async (type, search)=>{
-    console.log(type);
+    
     try {
 
         let searchResults;
