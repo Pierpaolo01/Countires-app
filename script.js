@@ -1,6 +1,9 @@
 
 const results = document.querySelector('.results');
 const mainSection = document.querySelector('.main-section');
+const detailedSection = document.querySelector('.detailed-info');
+
+detailedSection.style.display = 'none';
 
 const detailedImg = document.querySelector('#countryFlag');
 const detailedCounryName = document.querySelector('#country-name');
@@ -12,6 +15,30 @@ const capitalP = document.querySelector('#capital');
 const topDomainP = document.querySelector('#top-level-domain');
 const currencyP = document.querySelector('#currency');
 const languageP = document.querySelector('#language');
+const borderParent = document.querySelector('.border-country-parent');
+
+const inputField = document.querySelector('input[type="search"]');
+inputField.addEventListener('input', function(){
+    results.innerHTML = "";
+    
+    
+    if(inputField.value){
+        getCountriesBySearch('input', inputField.value);
+    }else if(!inputField.value){
+        getCountries();
+    }
+});
+
+const dropdownMenuItem = document.querySelectorAll('.dropdown-item');
+dropdownMenuItem.forEach(el => {
+    el.addEventListener('click', event =>{
+        getCountriesBySearch('region', el.title);
+        if(el.title === 'all' ){
+            getCountries();
+        }
+        results.innerHTML = "";
+    });
+});
 
 
 
@@ -38,6 +65,7 @@ function displayCountries(country){
     //Country flag
     const countryFlag = document.createElement('img');
     countryFlag.src = country.flag;
+    countryFlag.alt = country.name;
     //div to hold the quick-facts
     const countryInfoDiv = document.createElement('div');
     countryInfoDiv.classList = 'country-small-info';
@@ -47,7 +75,7 @@ function displayCountries(country){
     countryTitle.textContent = country.name;
 
     const countryPopulation = document.createElement('p');
-    countryPopulation.textContent = "Population: " + country.population;
+    countryPopulation.textContent = "Population: " + numberWithCommas(country.population); //This line causing fatal issue, I believe it has to do with await process
 
     const region = document.createElement('p');
     region.textContent = "Region: " + country.region;
@@ -73,11 +101,13 @@ function displayCountries(country){
 
 function moreInfo(obj){
     console.log(obj);
+    detailedSection.style.display = 'flex';
     mainSection.style.display = 'none';
-    detailedImg.src = obj.flag
+    detailedImg.src = obj.flag;
+    detailedImg.alt = obj.name;
     detailedCounryName.textContent = obj.name;
     nativeNameP.textContent = "Native name: " + obj.nativeName;
-    populatonP.textContent = "population: "+ obj.population;
+    populatonP.textContent = "population: "+ numberWithCommas(obj.population);
     regionP.textContent = "Region: " + obj.region;
     subRegionP.textContent = "Sub Region: " + obj.subRegionP;
     capitalP.textContent = "Capital: " + obj.capital;
@@ -104,6 +134,10 @@ function moreInfo(obj){
     
 }
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const getCountryFullname = async (countryCode) => {
     const borderDiv = document.createElement('div');
     const borderNameHolder = document.createElement('p');
@@ -116,13 +150,44 @@ const getCountryFullname = async (countryCode) => {
 
     borderDiv.appendChild(borderNameHolder);
 
-    const borderParent = document.querySelector('.border-country-parent');
     borderParent.appendChild(borderDiv);
 
 
 }
 
+function backToMain(){
+    detailedSection.style.display = 'none';
+    mainSection.style.display = 'flex';
+    
+    borderParent.querySelectorAll('*').forEach(el =>{
+        el.remove();
+    })
 
+
+}
+
+
+
+const getCountriesBySearch = async (type, search)=>{
+    console.log(type);
+    try {
+
+        let searchResults;
+
+        if(type === 'input'){
+            searchResults = await fetch('https://restcountries.eu/rest/v2/name/'+search);
+        }else if(type === 'region'){
+            
+            searchResults = await fetch('https://restcountries.eu/rest/v2/region/'+search);
+        }
+        const results = await searchResults.json();
+
+        showCountries(results);
+
+    }catch(err) {
+        console.error(err);
+    }
+}
 
 //This function gathers the API data via a fetch, turns it into JSON
 // and sends it to the next function to parse the JSON & display it.
@@ -136,7 +201,7 @@ const getCountries = async ()=>{
         showCountries(data);
     }
     catch(err){
-        console.log(err);
+        console.error(err);
     }
 }
 

@@ -93,6 +93,15 @@ header img {
     text-align: center;
 }
 
+.main-section{
+    flex-direction: column;
+}
+
+.detailed-info{
+    display: flex;
+    flex-direction: column;
+}
+
 
 .detailed-info img{
     max-width: 100%;
