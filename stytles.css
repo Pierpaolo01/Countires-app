@@ -179,6 +179,10 @@ header img {
     text-decoration: none;
   }
 
+  .detailed-info button{
+    max-width: 100px;
+}
+
 @media only screen and (min-width: 475px){
     
 
@@ -229,6 +233,34 @@ header img {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+    }
+
+    .detailed-info{
+        max-width: 770px;
+        margin: 0px auto;
+    }
+
+    .main-detail-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .main-detail-container img{
+        max-width: 450px;
+        max-height: 300px;
+    }
+
+    .border-country-parent{
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+
+    .border-countries h4{
+        text-align: center;
+        border-bottom: 3px solid white ;
     }
 }
 

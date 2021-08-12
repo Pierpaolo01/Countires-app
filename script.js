@@ -45,7 +45,7 @@ changeTheme.addEventListener('click', func =>{
     const currentMode = changeTheme.children[1];
     const modeImg = changeTheme.children[0];
     const lightTone = document.querySelectorAll('.theme-tone-light');
-    const pageText = document.querySelectorAll('p, h5, h2');
+    const pageText = document.querySelectorAll('p, h4, h2');
     const body = document.querySelector('body');
 
     if(currentMode.innerHTML === "Dark-Mode"){
@@ -59,6 +59,7 @@ changeTheme.addEventListener('click', func =>{
         });
 
         body.style.backgroundColor = 'hsl(0, 0%, 98%)';
+        document.querySelector('h4').style.borderColor = "black";
         
         modeImg.src = 'resources/sun.png';
         currentMode.innerHTML = "Light-Mode";
@@ -75,6 +76,7 @@ changeTheme.addEventListener('click', func =>{
 
         body.style.backgroundColor = 'hsl(207, 26%, 17%)';
 
+        document.querySelector('h4').style.borderColor = "white";
         modeImg.src = 'resources/icon-moon.svg';
         currentMode.innerHTML = "Dark-Mode";
     }
@@ -148,7 +150,6 @@ function displayCountries(country){
 }
 
 function moreInfo(obj){
-    console.log(obj);
     detailedSection.style.display = 'flex';
     mainSection.style.display = 'none';
     detailedImg.src = obj.flag;
@@ -188,7 +189,7 @@ function numberWithCommas(x) {
 
 const getCountryFullname = async (countryCode) => {
     const borderDiv = document.createElement('div');
-    const borderNameHolder = document.createElement('p');
+    const borderNameHolder = document.createElement('span');
 
     const borderName = await fetch('https://restcountries.eu/rest/v2/alpha/'+ countryCode);
     const borderNameJson = await borderName.json();
