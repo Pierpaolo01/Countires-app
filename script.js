@@ -60,7 +60,7 @@ changeTheme.addEventListener('click', func =>{
 
         body.style.backgroundColor = 'hsl(0, 0%, 98%)';
         
-        modeImg.src = 'resources/icon-sun.svg';
+        modeImg.src = 'resources/sun.png';
         currentMode.innerHTML = "Light-Mode";
 
     }else if(currentMode.innerHTML === "Light-Mode"){

@@ -7,11 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countries</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    rel="stylesheet"
-  />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
 
 
     <link rel="stylesheet" href="stytles.css">
@@ -39,33 +37,37 @@
 
             <!--Main section, gets hidden to show the 'More details of country'-->
             <section class="main-section">
-                <!-- Search bar -->
-                <section class="search-field">
-                    <div class="input-group">
-                        <span class="input-group-append">
-                            <div class="input-group-text theme-tone-light"><i class="fa fa-search"></i></div>
-                        </span>
-                        <input class="form-control py-2 border-left-0 border theme-tone-light" type="search" placeholder="search for a countery..." id="example-search-input">
-                    </div>
-                </section>
-
-                <!-- Filter Options dropdown-->
-                <section class="dropdown-field" >
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select a region
-                        </a>
-                    
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" title="all">All</a>
-                            <a class="dropdown-item" title="africa">Africa</a>
-                            <a class="dropdown-item" title="americas">Americas</a>
-                            <a class="dropdown-item" title="asia">Asia</a>
-                            <a class="dropdown-item" title="europe">Europe</a>
-                            <a class="dropdown-item" title="oceania">Oceania</a>
-                        </div>
                 
-                    </div>
+                <section class="search-section">
+                    <!-- Search bar -->
+                    <section class="search-field">
+   
+                        <div class="sb-example-1">
+                            <div class="search">
+                               <input type="search" class="searchTerm" placeholder="What are you looking for?">
+                               <button type="submit" class="searchButton">
+                                 <i class="fa fa-search"></i>
+                              </button>
+                            </div>
+                         </div>
+                    </section>
+
+                    <!-- Filter Options dropdown-->
+                    <section class="dropdown-field" >
+                        <div class="dropdown">
+                            <span class="btn-lg btn-info">Select a region ᐁ </span>
+                        
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" title="all">All</a>
+                                <a class="dropdown-item" title="africa">Africa</a>
+                                <a class="dropdown-item" title="americas">Americas</a>
+                                <a class="dropdown-item" title="asia">Asia</a>
+                                <a class="dropdown-item" title="europe">Europe</a>
+                                <a class="dropdown-item" title="oceania">Oceania</a>
+                            </div>
+                    
+                        </div>
+                    </section>
                 </section>
             
 
@@ -80,7 +82,7 @@
             <!-- TODO -->
             <section class="detailed-info" >
 
-                <button class="btn-lg btn-dark" onclick="backToMain();">
+                <button class="btn-lg btn-info" onclick="backToMain();">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
                     </svg>
@@ -129,7 +131,7 @@
 </body>
 
 <script src="script.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 </html>
