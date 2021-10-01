@@ -1,5 +1,5 @@
 # REST Countries API with color theme switcher
-##NOTE: API discontinued
+## NOTE: API discontinued
 
 ![Project design](https://www.frontendmentor.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdz209s6jk%2Fimage%2Fupload%2Fv1554827486%2FChallenges%2Fwirxeocmd6tpnn9c5oqc.jpg&w=828&q=75)
 
